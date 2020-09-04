@@ -1,4 +1,4 @@
-package com.example.architecture_study.presenter
+package com.example.architecture_study
 
 import android.app.Activity
 import android.content.Context
@@ -24,6 +24,7 @@ class LoginPresenter : LoginContract.Presenter{
         this.view = view
         this.context = context
 
+        //Model
         //Firebase 로그인 관리하는 Object
         auth = FirebaseAuth.getInstance()
 
@@ -39,6 +40,7 @@ class LoginPresenter : LoginContract.Presenter{
 
     // 3. Presenter는 Model(auth)로부터 유저정보를 받아 view로 전달, view Update
     override fun checkSignedIn() {
+        //여기서 null인지 아닌지 확인
         view.updateUIByUser(auth.currentUser)
     }
 

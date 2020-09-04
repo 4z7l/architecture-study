@@ -59,10 +59,11 @@
 
 
 <br><br>
-> :bookmark: REFERENCE
+> :bookmark: REFERENCE   
 [MVP 패턴 코틀린으로 작업](https://devbearkinf.tistory.com/27)     
 [안드로이드 어플리케이션에 MVP패턴을 적용하는 방법](https://brunch.co.kr/@mobiinside/913)    
 [Android MVP 무작정 따라하기 - Presenter/View 생성하기](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/)    
 [MVP (Model View Presenter) 패턴의 로그인 예](https://riptutorial.com/ko/android/example/16219/mvp--model-view-presenter--%ED%8C%A8%ED%84%B4%EC%9D%98-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%98%88)   
  [correct work with onActivityResult in MVP project](https://stackoverflow.com/questions/48438754/correct-work-with-onactivityresult-in-mvp-project)   
-[ Implement interaction onActivityResult method from Activity to Presenter](https://github.com/LiveTyping/u2020-mvp/issues/14)   
+[ Implement interaction onActivityResult method from Activity to Presenter](https://github.com/LiveTyping/u2020-mvp/issues/14)    
+[renanalmeida/KotlinMVP](https://github.com/renanalmeida/KotlinMVP)
