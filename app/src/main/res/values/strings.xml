@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">Architecture_Study</string>
+    <string name="app_name">DevHyeonseong_MVP</string>
+    <string name="et_id">아이디/이메일을 입력하세요.</string>
+    <string name="et_password">비밀번호를 입력하세요.</string>
+    <string name="btn_custom_login">네이버 로그인</string>
+    <string name="btn_custom_logout">네이버 로그아웃</string>
+    <string name="btn_show_information">가져온 정보 나열</string>
 </resources>
