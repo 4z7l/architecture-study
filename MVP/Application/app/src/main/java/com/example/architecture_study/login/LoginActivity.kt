@@ -2,14 +2,18 @@ package com.example.architecture_study.login.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import com.example.architecture_study.MainActivity
 import com.example.architecture_study.R
 import com.example.architecture_study.base.BaseActivity
 import com.example.architecture_study.login.LoginContract
 import com.example.architecture_study.login.presenter.LoginPresenter
+import com.example.architecture_study.main.MainContract
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.firebase.auth.FirebaseUser
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_social_login.*
+import kotlinx.android.synthetic.main.activity_social_login.google_sign_in_button
 
 class LoginActivity : BaseActivity<LoginContract.View, LoginContract.Presenter>(), LoginContract.View {
 
@@ -46,10 +50,19 @@ class LoginActivity : BaseActivity<LoginContract.View, LoginContract.Presenter>(
 
     override fun startMainActivity(currentUser: FirebaseUser?) {
         startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 
     override fun startGoogleLoginActivity(signInIntent: Intent) {
         startActivityForResult(signInIntent, GOOGLE_REQUEST_CODE_SIGN_IN)
+    }
+
+    override fun showProgressBar() {
+        progressbar.visibility = View.VISIBLE
+    }
+
+    override fun hideProgressBar() {
+        progressbar.visibility = View.GONE
     }
 
 }

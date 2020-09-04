@@ -15,7 +15,8 @@ object LoginContract {
     interface View : BaseView {
         fun startMainActivity(currentUser: FirebaseUser?)
         fun startGoogleLoginActivity(signInIntent: Intent)
-
+        fun showProgressBar()
+        fun hideProgressBar()
     }
 
     interface Presenter : BasePresenter<View> {

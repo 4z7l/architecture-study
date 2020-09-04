@@ -2,6 +2,7 @@ package com.example.architecture_study.login.presenter
 
 import android.content.Intent
 import android.util.Log
+import android.view.View
 import com.example.architecture_study.login.LoginContract
 import com.example.architecture_study.base.BasePresenterImpl
 import com.example.architecture_study.data.FirebaseUserService
@@ -9,6 +10,7 @@ import com.example.architecture_study.data.SharedPreferenceService
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.tasks.Task
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginPresenter : BasePresenterImpl<LoginContract.View>(), LoginContract.Presenter {
 
@@ -30,18 +32,15 @@ class LoginPresenter : BasePresenterImpl<LoginContract.View>(), LoginContract.Pr
     }
 
     override fun googleSignIn() {
+        mView?.showProgressBar()
         if(loginIntent == null)
             loginIntent =  firebaseUserService.getGoogleSignInIntent(mView?.getContext()!!)
         mView?.startGoogleLoginActivity(loginIntent!!)
     }
 
     override fun handleSignInResult(task: Task<GoogleSignInAccount>) {
-        try {
-            val account = task.getResult(ApiException::class.java)!!
-            firebaseAuthWithGoogle(account)
-        } catch (e: ApiException) {
-        }
-
+        val account = task.getResult(ApiException::class.java)!!
+        firebaseAuthWithGoogle(account)
     }
 
     private fun firebaseAuthWithGoogle(account: GoogleSignInAccount) {
@@ -53,6 +52,7 @@ class LoginPresenter : BasePresenterImpl<LoginContract.View>(), LoginContract.Pr
                     mView?.startMainActivity(firebaseUserService.mAuth.currentUser)
                 } else {
                     mView?.showMessage("로그인 안됨")
+                    mView?.hideProgressBar()
                 }
             }
     }

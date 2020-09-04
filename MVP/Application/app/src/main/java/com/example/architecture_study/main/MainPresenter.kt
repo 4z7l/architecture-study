@@ -9,5 +9,6 @@ class MainPresenter : BasePresenterImpl<MainContract.View>(), MainContract.Prese
 
     override fun signOut() {
         firebaseUserService.mAuth.signOut()
+        mView?.startLoginActivity()
     }
 }
