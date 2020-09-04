@@ -4,12 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.example.architecture_study.presenter.LoginPresenter
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.android.synthetic.main.activity_social_login.*
@@ -64,6 +60,7 @@ class SocialLoginActivity : AppCompatActivity(), LoginContract.View{
         }
     }
 
+    //Presenter로
     // 8. 전달받은 ID 토큰을 통해 task 수행
     // * ID 토큰은 사용자 입력이 아닌데 presenter에서 task를 처리해도 되나?
     private fun firebaseAuthWithGoogle(idToken: String) {

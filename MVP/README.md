@@ -14,7 +14,7 @@
 ### Presenter
 - Model과 View 사이 매개체
 - View로부터 사용자 입력을 전달받아 Model의 로직 호출
-- Model의 처리 결과를 전달받아 View로 전달 
+- Model의 처리 결과를 전달받아 View로 전달
 
 ## 요구사항 분석
 ### (1) 요구사항 분석
@@ -43,15 +43,28 @@
 
 
 ## 구현 방법
-### (1) [Google Architecture]([https://github.com/android/architecture-samples](https://github.com/android/architecture-samples))
+#### (1) [Google Architecture]([https://github.com/android/architecture-samples](https://github.com/android/architecture-samples))
 - Contract : View와 Presenter에 대한 interface 구현
 - Presenter : Contract.Presenter를 상속받아 구현
 - View : Contract.View를 상속받아 구현
 
-#### 생성 방법
+#### (2) 생성 방법
 - Presenter : 실제 View가 만들어지는 시점에 생성 후 setView
 - setView가 호출되는 시점에 setPresenter(this)
 - View : setPresenter를 통해 전달받은 presenter를 통해 처리
+
+#### (3) 좋은 MVP 구현
+- BaseView, BasePresenter, BaseActivity를 만듦
+- Presenter에서는 View를 모르게
+- View에서는 if문 등을 아예 없애고 Presenter에서는 Android API를 모르게
+
+
+
+## 결과
+|디렉토리 구조|실행 화면(로그인 성공 시)|실행 화면(로그인 실패 시)|
+|:--:|:--:|:--:|
+|![image](1.PNG)|![image](2.gif)|![image](3.gif)|
+
 
 
 
@@ -59,10 +72,11 @@
 
 
 <br><br>
-> :bookmark: REFERENCE
+> :bookmark: REFERENCE   
 [MVP 패턴 코틀린으로 작업](https://devbearkinf.tistory.com/27)     
 [안드로이드 어플리케이션에 MVP패턴을 적용하는 방법](https://brunch.co.kr/@mobiinside/913)    
 [Android MVP 무작정 따라하기 - Presenter/View 생성하기](https://thdev.tech/androiddev/2016/11/28/Android-MVP-One/)    
 [MVP (Model View Presenter) 패턴의 로그인 예](https://riptutorial.com/ko/android/example/16219/mvp--model-view-presenter--%ED%8C%A8%ED%84%B4%EC%9D%98-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%EC%98%88)   
  [correct work with onActivityResult in MVP project](https://stackoverflow.com/questions/48438754/correct-work-with-onactivityresult-in-mvp-project)   
-[ Implement interaction onActivityResult method from Activity to Presenter](https://github.com/LiveTyping/u2020-mvp/issues/14)   
+[ Implement interaction onActivityResult method from Activity to Presenter](https://github.com/LiveTyping/u2020-mvp/issues/14)    
+[renanalmeida/KotlinMVP](https://github.com/renanalmeida/KotlinMVP)
