@@ -65,17 +65,10 @@ ViewModel이 Model의 데이터를 참조 -> View는 상태 변화를 감지하�
 - `@Database`
 -  `RoomDatabase`를 확장하는 추상 클래스여야 함
 -   주석 내에 데이터베이스와 연결된 항목의 목록을 포함
--   인수가 0개이며 `@Dao`로 주석이 지정된 클래스를 반환하는 추상 메서드를 포함해야 합니다.
-
-
-
-1.  Dependency 추가
-2.  Room 생성 (Entity, DAO, Database)
-3.  Repository 생성
-4.  ViewModel 생성
-5.  MainActivity 설정
-6.  RecyclerView 설정 (xml, Adapter)
-7.  AddActivity 생성
+-   인수가 0개이며 `@Dao`로 주석이 지정된 클래스를 반환하는 추상 메서드를 포함
+4.  Repository 생성
+5.  ViewModel 생성
+6.  Activity 설정
 
 
 
@@ -102,3 +95,4 @@ https://stackoverflow.com/questions/46665621/android-room-persistent-appdatabase
 https://tristan91.tistory.com/475   
 https://0391kjy.tistory.com/37   
 https://github.com/android/architecture-components-samples   
+https://poqw.github.io/about_mvvm/   
