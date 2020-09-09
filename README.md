@@ -4,7 +4,7 @@ Android Architecture Study
 ### Issue 탭 확인해주세요❗️❗️
 #### Fork하는 과정 여기서 봐주세요 -> [설명서](https://github.com/team-project-study/architecture-study/blob/master/Solution.md)
 
-> ## 스터디
+## 스터디
 
 - 안드로이드 아키텍처 (MVP, MVVM) 을 적용한 프로젝트 진행
 - 각자 개념 정리!
@@ -12,7 +12,7 @@ Android Architecture Study
 
 <br>
 
-> ## Member
+## Member
 
 |이름|Github ID|
 |:--:|:--:|
@@ -30,8 +30,8 @@ Android Architecture Study
 |이름|repository|
 |:--:|:--:|
 |정재윤|[:octocat:](https://github.com/team-project-study/architecture-study/tree/JeongJae-yun)|
-|오해성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/4z7l/MVP)|
-|김슬기|[:octocat:](https://github.com/team-project-study/architecture-study/tree/JeongJae-yun)|
+|오해성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/Haeseong5)|
+|김슬기|[:octocat:](https://github.com/team-project-study/architecture-study/tree/4z7l/MVP)|
 |강현성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/DevHyeonseong)|
 
 <br>
@@ -43,8 +43,8 @@ Android Architecture Study
 |이름|repository|
 |:--:|:--:|
 |정재윤|[:octocat:](https://github.com/team-project-study/architecture-study/tree/JeongJae-yun)|
-|오해성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/4z7l/MVVM2)|
-|김슬기|[:octocat:](https://github.com/team-project-study/architecture-study/tree/JeongJae-yun)|
+|오해성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/Haeseong5)|
+|김슬기|[:octocat:](https://github.com/team-project-study/architecture-study/tree/4z7l/MVVM2)|
 |강현성|[:octocat:](https://github.com/team-project-study/architecture-study/tree/DevHyeonseong)|
 
 
