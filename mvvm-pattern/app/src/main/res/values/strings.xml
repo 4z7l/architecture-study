@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MVVM-Architecture</string>
     <string name="title_hint">Title</string>
-    <string name="description_hint">Title</string>
+    <string name="description_hint">Description</string>
 
     <string name="title">제목</string>
     <string name="description">설명</string>

@@ -5,9 +5,9 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "Todo")
-data class Todo (
+data class TodoModel(
         @PrimaryKey(autoGenerate = true)
-        var id: Int,
+        var id: Int?,
 
         @ColumnInfo(name = "title")
         var title: String,
@@ -16,9 +16,9 @@ data class Todo (
         var descriptions: String,
 
         @ColumnInfo(name = "createdDate")
-        var createdDate: Long,
+        var createdDate: Long
 
-        @ColumnInfo(name = "progress")
-        var progress: Int
+//        @ColumnInfo(name = "progress")
+//        var progress: Int
 
 )
