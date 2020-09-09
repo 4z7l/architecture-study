@@ -1,12 +1,9 @@
 package com.example.architecture_study.ui.todo
 
-import android.app.Application
-import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.architecture_study.R
@@ -29,15 +26,26 @@ class TodoActivity : AppCompatActivity() {
     }
 
     fun initView() {
-        // recyclerview
-        mTodoAdapter = TodoAdapter()
-        recyclerview_todo.adapter = mTodoAdapter
-        recyclerview_todo.layoutManager = LinearLayoutManager(this)
-        recyclerview_todo.setHasFixedSize(true)
+        // adapter
+        mTodoAdapter = TodoAdapter().apply {
+            setItemClickListener(object : TodoAdapter.OnItemClickListener {
+                override fun onItemClick(position: Int) {
+                    showDeleteTodoDialog(getItem(position))
+                }
+            })
+        }
+
+        //recyclerview
+        val linearLayoutManager = LinearLayoutManager(this)
+        recyclerview_todo.run{
+            adapter=mTodoAdapter
+            layoutManager = linearLayoutManager
+            setHasFixedSize(true)
+        }
 
         //dialog
         fab_add.setOnClickListener{
-            openAddTodoDialog()
+            showAddTodoDialog()
         }
     }
 
@@ -49,7 +57,7 @@ class TodoActivity : AppCompatActivity() {
         })
     }
 
-    fun openAddTodoDialog(){
+    fun showAddTodoDialog(){
         val dialogView = layoutInflater.inflate(R.layout.dialog_add_todo,null)
         val dialog = AlertDialog.Builder(this)
             .setTitle("Todo 추가")
@@ -58,8 +66,8 @@ class TodoActivity : AppCompatActivity() {
                 val title = dialogView.et_todo_title.text.toString()
                 val description = dialogView.et_todo_description.text.toString()
                 val date = Date().time
-
                 val todoitem = Todo(null,title,description,date)
+
                 mTodoViewModel.insert(todoitem)
             })
             .setNegativeButton("취소",null)
@@ -67,4 +75,14 @@ class TodoActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    fun showDeleteTodoDialog(item: Todo) {
+        val dialog = AlertDialog.Builder(this)
+            .setTitle("삭제하시겠습니까?")
+            .setPositiveButton("확인", {dialogInterface, i ->
+                mTodoViewModel.delete(item)
+            })
+            .setNegativeButton("취소",null)
+            .create()
+        dialog.show()
+    }
 }
