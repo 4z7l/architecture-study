@@ -1,3 +1,5 @@
+include ':MVVM'
+include ':mvvm-study'
 include ':app:mvvm'
 include ':app'
 rootProject.name = "Architecture_Study"
