@@ -16,7 +16,7 @@ Android Architecture Study
 
 |이름|Github ID|
 |:--:|:--:|
-|정재윤|[JeongJae-yun](https://github.com/JeongJae-yun)|
+|정재윤|[JeongJae-yun](https://github.com/jaeyunn15)|
 |오해성|[Haeseong5](https://github.com/Haeseong5)|
 |김슬기|[4z7l](https://github.com/4z7l)|
 |강현성|[DevHyeonseong](https://github.com/DevHyeonseong)|
