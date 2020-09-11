@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MVVM</string>
+    <string name="btn_add">추가하기</string>
+</resources>
